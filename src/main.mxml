@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/halo"
+			   width="100%" height="100%">
+	
+	<fx:Script>
+		<![CDATA[
+			import flash.net.navigateToURL;
+			
+			[Bindable]
+			private var conceptDiagramURL:String = "http://create.ly/g29ia2202";
+		]]>
+	</fx:Script>
+	
+	<s:Scroller width="100%" height="100%">
+		<s:VGroup width="100%">
+			<s:Label text="Active Bot Network" />
+			<s:HGroup width="100%">
+				<s:Button label="wiki" click="{navigateToURL(new URLRequest('http://activebot.net/wiki'),'_self')}"/>
+				<s:Button label="forum" click="{navigateToURL(new URLRequest('http://activebot.net/forum'),'_self')}"/>
+			</s:HGroup>
+			<mx:Image source="{this.conceptDiagramURL}" 
+					  horizontalCenter="0" scaleContent="true" 
+					  maintainAspectRatio="true"
+					  click="{navigateToURL(new URLRequest(this.conceptDiagramURL),'_self')}" />
+			<s:Label text="concept v0.1" right="0" />
+		</s:VGroup>
+	</s:Scroller>
+	
+</s:Application>
